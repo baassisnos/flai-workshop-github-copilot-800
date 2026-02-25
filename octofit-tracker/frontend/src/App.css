@@ -1,0 +1,229 @@
+/* ═══════════════════════════════════════════
+   OctoFit Tracker – Global Color & UI System
+   ═══════════════════════════════════════════ */
+
+/* ── Color tokens ── */
+:root {
+  --octo-blue:       #58a6ff;
+  --octo-blue-light: #79c0ff;
+  --octo-dark:       #0d1117;
+  --octo-surface:    #161b22;
+  --octo-text:       #e6edf3;
+  --octo-muted:      #8b949e;
+  --octo-green:      #3fb950;
+  --octo-yellow:     #d29922;
+  --octo-red:        #f85149;
+  --octo-purple:     #bc8cff;
+  --octo-teal:       #39d3c3;
+  --page-bg:         #f0f4f8;
+}
+
+/* ── Page background & base text ── */
+body {
+  background-color: var(--page-bg);
+  color: #1a202c;
+}
+
+/* ── Navbar ── */
+.octofit-navbar {
+  background: linear-gradient(90deg, #0d1117 0%, #1a2332 60%, #0d2137 100%) !important;
+  border-bottom: 2px solid var(--octo-blue);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.3px;
+  color: var(--octo-blue) !important;
+  transition: color 0.2s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--octo-blue-light) !important;
+}
+
+.navbar-brand img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.navbar .nav-link {
+  color: #cdd9e5 !important;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--octo-blue-light) !important;
+  background: rgba(88, 166, 255, 0.1);
+}
+
+.navbar .nav-link.active {
+  color: var(--octo-blue) !important;
+  background: rgba(88, 166, 255, 0.15);
+  border-bottom: 2px solid var(--octo-blue);
+}
+
+/* ── Page headings ── */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a202c;
+  font-weight: 700;
+}
+
+/* ── Bootstrap link overrides ── */
+a {
+  color: var(--octo-blue);
+}
+a:hover {
+  color: var(--octo-blue-light);
+}
+
+/* ── Card wrapper ── */
+.octofit-card {
+  border: none;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+  transition: box-shadow 0.2s ease;
+}
+
+.octofit-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.17);
+}
+
+.octofit-card .card-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.9rem 1.4rem;
+  letter-spacing: 0.02em;
+  border-bottom: none;
+}
+
+/* ── Tables ── */
+.table {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.table thead th {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.table tbody td {
+  vertical-align: middle;
+  padding: 0.65rem 1rem;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(88, 166, 255, 0.06);
+}
+
+/* ── Buttons ── */
+.btn {
+  font-weight: 600;
+  border-radius: 7px;
+  letter-spacing: 0.02em;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ── Hero panel (home page) ── */
+.octofit-hero {
+  background: linear-gradient(135deg, #0d1117 0%, #0d2137 55%, #12277a 100%);
+  color: var(--octo-text);
+  border-radius: 1rem;
+  padding: 4rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.octofit-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(88,166,255,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.octofit-hero img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 0 24px rgba(88,166,255,0.4);
+  margin-bottom: 1.25rem;
+}
+
+.octofit-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--octo-blue);
+  margin-bottom: 0.75rem;
+  text-shadow: 0 0 24px rgba(88,166,255,0.3);
+}
+
+.octofit-hero p {
+  font-size: 1.15rem;
+  color: var(--octo-muted);
+  margin-bottom: 2.25rem;
+}
+
+/* ── Rank badge ── */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+/* ── Loading / empty state ── */
+.octofit-empty {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--octo-muted);
+  font-size: 1rem;
+}
+
+/* ── Badges ── */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ── Fade-in animation ── */
+.container {
+  animation: fadeIn 0.22s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(7px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
